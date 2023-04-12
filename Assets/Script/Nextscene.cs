@@ -7,9 +7,12 @@ public class Nextscene : MonoBehaviour
 {
     public string sceneName;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(sceneName);
+        if(collision.tag == "Player")
+        {
+            SceneManager.LoadScene(sceneName); 
+        }
     }
 
 }

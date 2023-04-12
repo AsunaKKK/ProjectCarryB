@@ -9,7 +9,7 @@ public class BestScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bestScore.text = " " + PlayerPrefs.GetFloat("jjj") + "0000" ;
+        bestScore.text = " " + PlayerPrefs.GetFloat("ScoreTime") + "0000" ;
     }
 
    

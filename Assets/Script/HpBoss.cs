@@ -12,11 +12,9 @@ public class HpBoss : MonoBehaviour
     public Image hpBar_Back;
     public GameObject Enemy;
     public GameObject[] Text;
-    
 
     public GameObject door;
     [SerializeField] private GameObject expo;
-
 
     private void Start()
     {
@@ -69,15 +67,7 @@ public class HpBoss : MonoBehaviour
             {
                 Text[i].SetActive(false);
             }
-
-
-
         }
-
-
-
     }
-
-
 }
 

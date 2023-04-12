@@ -7,6 +7,7 @@ public class chworm : MonoBehaviour
     public wormenimy[] enemyArray;
     public AudioSource wormAudi;
 
+    //Play Sound and Check player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -19,6 +20,7 @@ public class chworm : MonoBehaviour
         }
     }
 
+    //Check if a player is out of range.
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

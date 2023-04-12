@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class wormSound : MonoBehaviour
 {
-    // Start is called before the first frame update
     public AudioSource wormAudi;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +12,6 @@ public class wormSound : MonoBehaviour
         {
             wormAudi.Play();
         }
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -21,16 +19,5 @@ public class wormSound : MonoBehaviour
         {
             wormAudi.Stop();
         }
-
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

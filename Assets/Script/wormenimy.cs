@@ -31,16 +31,18 @@ public class wormenimy : MonoBehaviour
 
         Flip();
     }
-
+    // Move Enemy go to Star point
     private void ReturnStartPoint()
     {
         transform.position = Vector2.MoveTowards(transform.position, startingPoint.position, speed * Time.deltaTime);
     }
+    //Move Traget Player
     private void Chase()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         playerAni.Play("atk");
     }
+    //Flip Enemy R,L
     private void Flip()
     {
         if (transform.position.x > player.transform.position.x)

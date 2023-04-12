@@ -7,16 +7,12 @@ public class item : ScriptableObject
     public string itemName;
     public string itemDes;
     public Sprite itemSprite;
-  
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Ty tye;
+    public int value;
 
-    // Update is called once per frame
-    void Update()
+    public enum Ty
     {
-        
+        hp,
+        mp
     }
 }

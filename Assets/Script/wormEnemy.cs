@@ -20,7 +20,6 @@ public class wormEnemy : MonoBehaviour
 
     private Animator anim;
 
-
     public float speedEnemy;
     public Transform target;
     public float minimunDistance;
@@ -35,11 +34,12 @@ public class wormEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movepig();
+        Moveworm();
         AiEnemy();
     }
 
-    private void Movepig()
+    //Movement worm
+    private void Moveworm()
     {
         if (facingLeft)
         {
@@ -85,7 +85,7 @@ public class wormEnemy : MonoBehaviour
         }
     }
 
-
+    //Enemy traget Player
     private void AiEnemy()
     {
         if (Vector2.Distance(transform.position, target.position) > minimunDistance)

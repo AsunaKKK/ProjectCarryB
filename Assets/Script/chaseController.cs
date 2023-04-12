@@ -5,8 +5,8 @@ using UnityEngine;
 public class chaseController : MonoBehaviour
 {
     public bridEnemy[] enemyArray;
-    
 
+    //Play Sound and Check player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -18,7 +18,7 @@ public class chaseController : MonoBehaviour
             }
         }
     }
-
+    //Check if a player is out of range.
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

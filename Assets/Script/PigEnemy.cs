@@ -8,10 +8,10 @@ public class PigEnemy : MonoBehaviour
     [SerializeField] protected float rightCap;
     [SerializeField] private float way;
     [SerializeField] private float pigrun;
+
     public bool facingLeft = true;
 
     [SerializeField] private LayerMask ground;
-
     private enum State { idle, run }
     private State state_f = State.idle;
 
@@ -19,7 +19,6 @@ public class PigEnemy : MonoBehaviour
     private Collider2D coll;
 
     private Animator anim;
-
 
     public float speedEnemy;
     public Transform target;
@@ -39,6 +38,7 @@ public class PigEnemy : MonoBehaviour
         AiEnemy();
     }
 
+    // MoveMent Pig
     private void Movepig()
     {
         if (facingLeft)
@@ -86,6 +86,7 @@ public class PigEnemy : MonoBehaviour
     }
 
 
+    // Enemy Traget Player
     private void AiEnemy()
     {
         if(Vector2.Distance(transform.position , target.position) > minimunDistance)

@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class HP_Bar : MonoBehaviour
 {
-    public float hp;
-    public float hp_Cur;
+    public float maxHp;
+    private float currenHp;
 
     public Image hpBar_Front;
     public Image hpBar_Back;
     public GameObject Player;
     public GameObject[] Text;
 
-    public float addBlood = 1f;
-    public float second = 1f;
+    //public float addBlood = 1f;
+    //public float second = 1f;
 
     public string sceneName;
 
@@ -27,23 +27,28 @@ public class HP_Bar : MonoBehaviour
     public AudioSource tapSound;
     public AudioSource coreSound;
     public string SceneName;
+
+    public static HP_Bar hp_Bar;
+
+    private void Awake()
+    {
+        hp_Bar = this;
+    }
     private void Start()
     {
-        hp_Cur = hp;
+        currenHp = maxHp;
        
         Player.SetActive(true);
         for (int i = 0; i < 8; i++)
         {
             Text[i].SetActive(true);
         }
-
-        //StartCoroutine(addblood(addBlood, second));
-
     }
 
+    //Hp Bar  
     void SyncBar()
     {
-        hpBar_Front.fillAmount = hp_Cur / hp;
+        hpBar_Front.fillAmount = currenHp / maxHp;
         if (hpBar_Back.fillAmount > hpBar_Front.fillAmount)
         {
             hpBar_Back.fillAmount = Mathf.Lerp(hpBar_Back.fillAmount,
@@ -54,39 +59,37 @@ public class HP_Bar : MonoBehaviour
     private void Update()
     {
         SyncBar();
-        dedgo();
+        Dead();
     }
 
-    
+    //Damage Monter and Heal Player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "pigdamage" )
         {
-            hp_Cur -= pigDmg;
-            
-            
+            currenHp -= pigDmg;
         } 
         else if (collision.tag == "Tap")
         {
-            hp_Cur -= trapDmg;
+            currenHp -= trapDmg;
             tapSound.Play();
         }
         else if (collision.tag == "bird")
         {
-            hp_Cur -= birdDmg;
+            currenHp -= birdDmg;
         }
         else if(collision.tag == "worm")
         {
-            hp_Cur -= wormDmg;
+            currenHp -= wormDmg;
            
         }
         else if (collision.tag == "porcupine")
         {
-            hp_Cur -= porcupineDmg;
+            currenHp -= porcupineDmg;
         }
         else if (collision.tag == "Soul")
         {
-            hp_Cur += 5f;
+            currenHp += 5f;
             coreSound.Play();
             Destroy(collision.gameObject);
             
@@ -94,7 +97,7 @@ public class HP_Bar : MonoBehaviour
         }
         else if (collision.tag == "Soul_Worm")
         {
-            hp_Cur += 10f;
+            currenHp += 10f;
             coreSound.Play();
             Destroy(collision.gameObject);
             
@@ -102,7 +105,7 @@ public class HP_Bar : MonoBehaviour
         }
         else if (collision.tag == "Soul_Pig")
         {
-            hp_Cur += 30f;
+            currenHp += 30f;
             coreSound.Play();
             Destroy(collision.gameObject);
             
@@ -110,39 +113,30 @@ public class HP_Bar : MonoBehaviour
         }
         else if(collision.tag == "BossPig")
         {
-            hp_Cur -= 20f;
+            currenHp -= 20f;
         }
 
-
-
-
-
-
     }
-    public void dedgo()
+    // if hp = 0 Player Dead
+    public void Dead()
     {
 
-        if (hp_Cur <= 0)
+        if (currenHp <= 0)
         {
             SceneManager.LoadScene(SceneName);
-
-
         }
-
-
-
     }
 
-    /*public IEnumerator addblood(float value, float time)
+    //Add Hp Player
+    public void IncreaseHp(int value)
     {
-        while (true)
+        if(currenHp >= maxHp)
         {
-            yield return new WaitForSeconds(time);
-            if (hp_Cur > 0)
-            {
-                hp_Cur += value;
-            }
-          
+            maxHp = currenHp;
         }
-    }*/
+        else
+        {
+            currenHp += value;
+        }
+    }
 }

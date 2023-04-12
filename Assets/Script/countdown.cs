@@ -7,56 +7,41 @@ using UnityEngine.SceneManagement;
 public class countdown : MonoBehaviour
 {
     public Text scoreTime;
+    public Text timetext;
     public float scoreAmount;
     public float pointIncreasedPerSecond;
-    public int minutes;
-    public int secondsFill;
-
     public float timeLimit = 11f;
     public float timeremain;
-
-    public Text timetext;
+    public int minutes;
+    public int secondsFill;
     public int addTime;
-
-
     public int time;
     public string sceneName;
     public AudioSource audioSource;
-
-    //public Transform playerTraget;
-
 
 
     // Start is called before the first frame update
     void Start()
     {
         timeremain = 11f;
-
         scoreAmount = 60f;
         pointIncreasedPerSecond = 1f;
         secondsFill = 0;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(donDetoryObj);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        sTime();
-        ff();
-        //traget();
-
+        CountdownTime();
+        OutOfTime();
         timescore();
-        
-
-       
-        
-
     }
 
-    public void sTime()
+    //Time Countdown 
+    public void CountdownTime()
     {
-
         //scoreTime.text = "Time: " + (int)minutes + ":" + (int)secondsFill + (int)scoreAmount;
         scoreAmount -= pointIncreasedPerSecond * Time.deltaTime;
         timetext.text = " " + timeremain + ":" + (int)scoreAmount;
@@ -69,24 +54,10 @@ public class countdown : MonoBehaviour
             scoreAmount = 60f;
            
         }
-
-
-
-
-        /*if (scoreAmount < 10)
-        {
-            scoreTime.text = "Time: " + (int)minutes + ":" + (int)secondsFill + (int)scoreAmount;
-        }
-
-        if (scoreAmount > 10)
-        {
-            scoreTime.text = "Time: " + (int)minutes + ":" + (int)scoreAmount;
-        }*/
-
     }
 
-
-    public void ff()
+    // Out Of Time Chang Scene
+    public void OutOfTime()
     {
         if (timeremain <= -1)
         {
@@ -94,30 +65,22 @@ public class countdown : MonoBehaviour
         }
     }
 
+   // Add Time if pic up item
    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if(collision.tag == "Time")
+   {
+        if (collision.tag == "Time")
         {
             timeremain += addTime;
             minutes -= addTime;
             audioSource.Play();
-            
+
             Destroy(collision.gameObject);
         }
     }
 
-    /*public void traget()
-    {
-        
-
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().transform.position = new Vector3(playerTraget.position.x, playerTraget.position.y, transform.position.z);
-
-        transform.position = new Vector3(playerTraget.position.x, playerTraget.position.y, transform.position.z);
-    }*/
-
+    // End game send time value have score 
     public void timescore()
     {
-        PlayerPrefs.SetFloat("jjj",timeremain);
+        PlayerPrefs.SetFloat("ScoreTime",timeremain);
     }
 }

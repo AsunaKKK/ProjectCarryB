@@ -9,7 +9,8 @@ public class ATK : MonoBehaviour
 
     bool comboPossible;
     public int atk;
-    
+    public GameObject hitBox;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,9 @@ public class ATK : MonoBehaviour
             Attack();
             atkSound.Play();
         }
-            
     }
 
+    //Player Attack
     void Attack()
     {
         if (atk == 0)
@@ -46,13 +47,12 @@ public class ATK : MonoBehaviour
             }
         }
     }
-    public GameObject hitBox;
 
+    //Change tag 
     void ChangeTag(string t)
     {
         hitBox.tag = t;
     }
-
 
     public void ComboPossible()
     {

@@ -17,9 +17,7 @@ public class BossPig : MonoBehaviour
 
     private Rigidbody2D rb;
     private Collider2D coll;
-
     private Animator anim;
-
 
     public float speedEnemy;
     public Transform target;
@@ -39,6 +37,7 @@ public class BossPig : MonoBehaviour
         AiEnemy();
     }
 
+    //Movement Pig
     private void Movepig()
     {
         if (facingLeft)
@@ -85,7 +84,7 @@ public class BossPig : MonoBehaviour
         }
     }
 
-
+    // Enemy traget Player
     private void AiEnemy()
     {
         if (Vector2.Distance(transform.position, target.position) > minimunDistance)

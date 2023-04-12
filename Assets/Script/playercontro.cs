@@ -9,21 +9,19 @@ public class playercontro : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource fallingSound;
    
-    
-    [SerializeField] private Rigidbody2D rb;
     public float Lspeed;
     public float Rspeed;
     public float jump;
+
     [SerializeField] private Animator anim;
     [SerializeField] private Collider2D cooll;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float hurtnum;
+    [SerializeField] private Rigidbody2D rb;
 
-    
     private enum State { idle , run , jump , falling , hurt}
     private State state = State.idle;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +42,7 @@ public class playercontro : MonoBehaviour
         anim.SetInteger("state" , (int)state);
     }
 
-   
+    //Hurt 
     private void OnCollisionEnter2D(Collision2D collision)
     {
        bridEnemy birds = collision.gameObject.GetComponent<bridEnemy>();
@@ -61,31 +59,9 @@ public class playercontro : MonoBehaviour
             }
             
         }
-        
-            /*state = State.hurt;
-            if (collision.gameObject.transform.position.x > transform.position.x)
-            {
-                rb.velocity = new Vector2(-hurtnum, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector2(hurtnum, rb.velocity.y);
-            }*/
-        
-
-
-
-        //state = State.hurt;
-        /*if (collision.gameObject.transform.position.x > transform.position.x)
-        {
-            rb.velocity = new Vector2(-hurtnum, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = new Vector2(hurtnum, rb.velocity.y);
-        }*/
-       
     }
+
+    //Movement Player and Sound Player
     void Movement ()
     {
         float hDirection = Input.GetAxis("Horizontal");
@@ -115,12 +91,14 @@ public class playercontro : MonoBehaviour
         }
     }
 
+    //Jump
     void Jump ()
     {
         rb.velocity = new Vector2(rb.velocity.x, jump);
         state = State.jump;
     }
 
+    //Animetion Player
     void AnimationState ()
     {
         if (state == State.jump)
