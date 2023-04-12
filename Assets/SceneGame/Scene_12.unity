@@ -37794,6 +37794,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 997975164679861506, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: sceneName
+      value: Scene_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446689395465451875, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 121.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446689395465451875, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.11
+      objectReference: {fileID: 0}
     - target: {fileID: 8882224707570702320, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
       propertyPath: sceneName
       value: Scene_13
@@ -39001,6 +39013,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
       propertyPath: hpBar_Back
       value: 

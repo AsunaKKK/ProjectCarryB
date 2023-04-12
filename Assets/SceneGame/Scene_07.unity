@@ -10833,7 +10833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb01dbd89a4f0d42b51deb9e9f31678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Scene_017
+  sceneName: Scene_17
 --- !u!1 &446292732
 GameObject:
   m_ObjectHideFlags: 0
@@ -13221,6 +13221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
       propertyPath: SceneName
       value: Scene_09

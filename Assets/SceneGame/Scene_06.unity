@@ -19212,6 +19212,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
       propertyPath: SceneName
       value: Scene_09
       objectReference: {fileID: 0}
@@ -32552,7 +32556,7 @@ Transform:
   m_LocalScale: {x: 1.0853407, y: 1.0853407, z: 1.0853407}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811989842
 GameObject:
@@ -32862,7 +32866,7 @@ Transform:
   - {fileID: 1315056694}
   - {fileID: 291184731}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852832519
 GameObject:
@@ -32900,7 +32904,7 @@ Transform:
   - {fileID: 1142358882}
   - {fileID: 666504189}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934438763
 GameObject:
@@ -109319,7 +109323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1533623586}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menucon, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -109382,7 +109386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3125796907652253053, guid: 49ca163a1fcffef40882a77975360653, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3125796907652253053, guid: 49ca163a1fcffef40882a77975360653, type: 3}
       propertyPath: m_LocalPosition.x
@@ -114333,7 +114337,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418023925
 GameObject:
@@ -114370,49 +114374,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5576570063782988144, guid: fc855b24b694d6542a6e66e7d2349351, type: 3}
   m_PrefabInstance: {fileID: 1627932797}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1533623585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1533623587}
-  - component: {fileID: 1533623586}
-  m_Layer: 0
-  m_Name: MenuCon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1533623586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533623585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c766cef85fbe7324c815509b14c7faf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1533623587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533623585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 923.6922, y: 723.97644, z: -86.88653}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534205984
 GameObject:
   m_ObjectHideFlags: 0
@@ -114538,7 +114499,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1545521500
 MonoBehaviour:
@@ -119535,7 +119496,7 @@ Transform:
   m_LocalScale: {x: 1.0853407, y: 1.0853407, z: 1.0853407}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809408729
 GameObject:
@@ -120134,7 +120095,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1533623586}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: menucon, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1

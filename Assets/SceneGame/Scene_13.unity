@@ -122705,6 +122705,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 997975164679861506, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: sceneName
+      value: Scene_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446689395465451875, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446689395465451875, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446689395465451875, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8882224707570702320, guid: a3872a705d5d12e44bd5a3cd93687547, type: 3}
       propertyPath: sceneName
       value: Scene_06
@@ -128490,6 +128506,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7998569090249152539, guid: 2af65433e68b3d041848c862f2232e41, type: 3}
       propertyPath: hpBar_Back
       value: 
